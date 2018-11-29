@@ -1,0 +1,45 @@
+
+]squid:S1075."ARefactor your code to get this URI from a customizable parameter.(¾šş¾ùÿÿÿÿ
+=squid:S1075T"&Remove this hard-coded path-delimiter.(½È½‡
+=squid:S1075b"&Remove this hard-coded path-delimiter.(½È½‡
+esquid:S4042d"IUse "java.nio.Files#delete" here for better messages on error conditions.(²Œ­ûÿÿÿÿ
+`squid:S4042u"IUse "java.nio.Files#delete" here for better messages on error conditions.(ïÀÒ¶
+`squid:S4042x"IUse "java.nio.Files#delete" here for better messages on error conditions.(íÔˆ¢
+hsquid:S2095¢"PUse try-with-resources or close this "OutputStreamWriter" in a "finally" clause.(ê ñÜ
+dsquid:S2095ˆ"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(øÆˆ€
+dsquid:S2095£"LUse try-with-resources or close this "BufferedWriter" in a "finally" clause.(óî¶Ñ
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(É¹ÊÎıÿÿÿÿ
+bsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(†€éˆ
+gsquid:CommentedOutCodeLine$"<This block of commented-out lines of code should be removed.(á”“÷ÿÿÿÿÿ
+gsquid:CommentedOutCodeLine-"<This block of commented-out lines of code should be removed.(Ü±˜ğøÿÿÿÿ
+gsquid:CommentedOutCodeLine8"<This block of commented-out lines of code should be removed.(í‰²ÿÿÿÿÿ
+O
+squid:S106"9Replace this use of System.out or System.err by a logger.(«¡Ë°
+O
+squid:S106*"9Replace this use of System.out or System.err by a logger.(«¡Ë°
+T
+squid:S106,"9Replace this use of System.out or System.err by a logger.(÷ºâÿÿÿÿÿÿ
+T
+squid:S1066"9Replace this use of System.out or System.err by a logger.(ƒÍšøÿÿÿÿ
+O
+squid:S1067"9Replace this use of System.out or System.err by a logger.(ôıúƒ
+T
+squid:S106<"9Replace this use of System.out or System.err by a logger.(ö–ÍËùÿÿÿÿ
+Nsquid:S1135"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+Nsquid:S1135"2Complete the task associated to this TODO comment.(ÕÌ®şÿÿÿÿ
+Nsquid:S11352"2Complete the task associated to this TODO comment.(ÕÌ®şÿÿÿÿ
+dsquid:S2677Š"LUse or store the value returned from "readLine" instead of throwing it away.(§ÕÎÖ
+?squid:S11483"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+@squid:S1148©"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+wsquid:S1149‰"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(í…Ò‰
+]
+squid:S899Y"BDo something with the "boolean" value returned by "createNewFile".(Ğ’Íùÿÿÿÿ
+V
+squid:S899d";Do something with the "boolean" value returned by "delete".(²Œ­ûÿÿÿÿ
+Q
+squid:S899u";Do something with the "boolean" value returned by "delete".(ïÀÒ¶
+Q
+squid:S899x";Do something with the "boolean" value returned by "delete".(íÔˆ¢
+^
+squid:S899 "BDo something with the "boolean" value returned by "createNewFile".(ôü¿Ÿÿÿÿÿÿ
+Qsquid:S1161)":Add the "@Override" annotation above this method signature(“–ış

@@ -1,0 +1,27 @@
+
+Usquid:S1075"ARefactor your code to get this URI from a customizable parameter.(ÀïŒx
+[squid:S1075"ARefactor your code to get this URI from a customizable parameter.(áê°¼ıÿÿÿÿ
+[squid:S1075"ARefactor your code to get this URI from a customizable parameter.(åØËÿÿÿÿÿ
+Vsquid:S1075"ARefactor your code to get this URI from a customizable parameter.(ï´Ê
+nsquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ç›Ò÷
+ssquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(øœ™äüÿÿÿÿ
+}squid:S4165"cRemove this useless assignment; "image" already holds the assigned value along all execution paths.(¦ŒªÕûÿÿÿÿ
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÉÏìâ
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÉÏìâ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(³ç‘âüÿÿÿÿ
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(©£Îá
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(†Ö³ ùÿÿÿÿ
+Asquid:S1481"-Remove this unused "logoPath" local variable.(ÀïŒx
+@squid:S1481"+Remove this unused "result" local variable.(ìş“
+Rsquid:S00107"<Method has 8 parameters, which is greater than 7 authorized.(¬ï‡
+Psquid:S1854"<Remove this useless assignment to local variable "logoPath".(ÀïŒx
+usquid:S00115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Ğ¨Ú±ÿÿÿÿÿ
+usquid:S00115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Ğø­àşÿÿÿÿ
+=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+ksquid:S1149"VReplace the synchronized class "Hashtable" by an unsynchronized one such as "HashMap".(ç›Ò÷

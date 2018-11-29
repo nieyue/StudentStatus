@@ -1,0 +1,5 @@
+
+Å%squid:RedundantThrowsDeclarationCheck"ŽRemove the declaration of thrown exception 'com.fasterxml.jackson.databind.JsonMappingException' which is a subclass of 'java.io.IOException'.(«”¶¤ÿÿÿÿÿ
+¿%squid:RedundantThrowsDeclarationCheck"ˆRemove the declaration of thrown exception 'com.fasterxml.jackson.core.JsonParseException' which is a subclass of 'java.io.IOException'.(«”¶¤ÿÿÿÿÿ
+tsquid:S1488"^Immediately return this expression instead of assigning it to the temporary variable "result".(üìÖR
+Vsquid:S1118":Add a private constructor to hide the implicit public one.(Œ’® ÿÿÿÿÿ

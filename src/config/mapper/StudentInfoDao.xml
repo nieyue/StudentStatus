@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="com.nieyue.dao.StudentInfoDao">
+<!-- 添加学生信息 -->
+<insert id="addStudentInfo" parameterType="StudentInfo" keyProperty="studentInfoId" flushCache="true"  >
+   INSERT IGNORE INTO
+   		  student_info_tb
+   		 (
+   		 examination_account,
+   		 examination_pasword,
+   		 recommender,
+   		 director_unit,
+   		 unit_charge,
+   		 cer_query_website,
+   		 link,
+   		 input_teacher,
+   		 enrollment_year,
+   		 examination_school,
+   		 examination_point,
+   		 section_type,
+   		 learn_method,
+   		 recruiter,
+   		 reg_place,
+   		 reg_money1,
+   		 reg_money2,
+   		 reg_money3,
+   		 graduation_date,
+   		 mark,
+   		 create_date,
+   		 update_date,
+   		 account_id)
+   VALUES
+    	 (
+    	 #{examinationAccount},
+   		  #{examinationPasword},
+   		  #{recommender},
+   		  #{directorUnit},
+   		  #{unitCharge},
+   		  #{cerQueryWebsite},
+   		  #{link},
+   		  #{inputTeacher},
+   		  #{enrollmentYear},
+   		  #{examinationSchool},
+   		  #{examinationPoint},
+   		  #{sectionType},
+   		  #{learnMethod},
+   		  #{recruiter},
+   		  #{regPlace},
+   		  #{regMoney1},
+   		  #{regMoney2},
+   		  #{regMoney3},
+   		  #{graduationDate},
+   		  #{mark},
+   		  #{createDate},
+   		  #{updateDate},
+   		  #{accountId})
+</insert>  
+<!-- 更新学生信息 -->
+<update id="updateStudentInfo" parameterType="StudentInfo" >
+    UPDATE 
+    	studentInfo_tb
+	<set>
+		<if test="examinationAccount!=null">
+			examination_account=#{examinationAccount},
+		</if>
+		<if test="examinationPasword!=null">
+			examination_pasword=#{examinationPasword},
+		</if>
+		<if test="recommender!=null">
+			recommender=#{recommender},
+		</if>
+		<if test="directorUnit!=null">
+			director_unit=#{directorUnit},
+		</if>
+		<if test="unitCharge!=null">
+			unit_charge=#{unitCharge},
+		</if>
+		<if test="cerQueryWebsite!=null">
+			cer_query_website=#{cerQueryWebsite},
+		</if>
+		<if test="link!=null">
+			link=#{link},
+		</if>
+		<if test="inputTeacher!=null">
+			input_teacher=#{inputTeacher},
+		</if>
+		<if test="enrollmentYear!=null">
+			enrollment_year=#{enrollmentYear},
+		</if>
+		<if test="examinationSchool!=null">
+			examination_school=#{examinationSchool},
+		</if>
+		<if test="examinationPoint!=null">
+			examination_point=#{examinationPoint},
+		</if>
+		<if test="sectionType!=null">
+			section_type=#{sectionType},
+		</if>
+		<if test="learnMethod!=null">
+			learn_method=#{learnMethod},
+		</if>
+		<if test="recruiter!=null">
+			recruiter=#{recruiter},
+		</if>
+		<if test="regPlace!=null">
+			reg_place=#{regPlace},
+		</if>
+		<if test="regMoney1!=null">
+			reg_money1=#{regMoney1},
+		</if>
+		<if test="regMoney2!=null">
+			reg_money2=#{regMoney2},
+		</if>
+		<if test="regMoney3!=null">
+			reg_money3=#{regMoney3},
+		</if>
+		<if test="graduationDate!=null">
+			graduation_date=#{graduationDate},
+		</if>
+		<if test="mark!=null">
+			mark=#{mark},
+		</if>
+		<if test="createDate!=null">
+			create_date=#{createDate},
+		</if>
+		<if test="updateDate!=null">
+			update_date=#{updateDate},
+		</if>
+		<if test="accountId!=null">
+			account_id=#{accountId},
+		</if>
+	</set>
+
+	WHERE
+    	 student_info_id=#{studentInfoId}
+</update>
+<!-- 删除学生信息-->
+<delete id="delStudentInfo"  parameterType="Integer" >  
+    DELETE FROM
+    	 student_info_tb
+    	 WHERE student_info_id=#{studentInfoId}
+</delete>  
+<!-- 加载学生信息-->
+<select id="loadStudentInfo" parameterType="Integer" resultType="StudentInfo" >
+SELECT 
+		student_info_id,
+	 	examination_account,
+   		 examination_pasword,
+   		 recommender,
+   		 director_unit,
+   		 unit_charge,
+   		 cer_query_website,
+   		 link,
+   		 input_teacher,
+   		 enrollment_year,
+   		 examination_school,
+   		 examination_point,
+   		 section_type,
+   		 learn_method,
+   		 recruiter,
+   		 reg_place,
+   		 reg_money1,
+   		 reg_money2,
+   		 reg_money3,
+   		 graduation_date,
+   		 mark,
+   		 create_date,
+   		 update_date,
+   		 account_id
+FROM student_info_tb
+WHERE student_info_id=#{studentInfoId}
+</select>
+
+<!-- 分页查询学生信息-->
+<select id="browsePagingStudentInfo" resultType="StudentInfo">  
+        SELECT
+	student_info_id,
+	examination_account,
+	examination_pasword,
+	recommender,
+	director_unit,
+	unit_charge,
+	cer_query_website,
+	link,
+	input_teacher,
+	enrollment_year,
+	examination_school,
+	examination_point,
+	section_type,
+	learn_method,
+	recruiter,
+	reg_place,
+	reg_money1,
+	reg_money2,
+	reg_money3,
+	graduation_date,
+	mark,
+	create_date,
+	update_date,
+	account_id
+	FROM student_info_tb
+	<where>
+		<if test="accountId!=null">
+			AND  account_id=#{accountId}
+		</if>
+		AND ${orderName}
+		<if test="orderWay=='asc'">
+			<![CDATA[>=]]>
+		</if>
+		<if test="orderWay=='desc'">
+			<![CDATA[<= ]]>
+		</if>
+		(SELECT ${orderName} FROM student_info_tb
+		<where>
+			<if test="accountId!=null">
+				AND  account_id=#{accountId}
+			</if>
+		</where>
+		ORDER BY
+		${orderName}  ${orderWay}
+		LIMIT #{pageNum}, 1
+		)
+	</where>
+		ORDER BY
+		${orderName}  ${orderWay}
+		LIMIT
+		#{pageSize}
+</select> 
+
+<!-- 统计记录条数 -->
+<select id="countAll"  resultType="int">  
+	SELECT
+	 	count(student_info_id)
+	FROM student_info_tb
+	<where>
+		<if test="accountId!=null">
+			AND  account_id=#{accountId}
+		</if>
+	</where>
+</select>
+</mapper>

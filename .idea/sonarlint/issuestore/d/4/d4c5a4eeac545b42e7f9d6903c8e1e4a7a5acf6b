@@ -1,0 +1,17 @@
+
+}squid:S2293™"YReplace the type specification in this constructor call with the diamond operator ("<>").(õ¹ĞÍÿÿÿÿÿ8 ²ñõ,
+zsquid:S2159ò"VRemove this call to "equals"; comparisons between unrelated types always return false.(èğ×ğøÿÿÿÿ8İù“ğõ,
+}squid:S2293ƒ"YReplace the type specification in this constructor call with the diamond operator ("<>").(õ¹ĞÍÿÿÿÿÿ8Ñ³Ùğõ,
+zsquid:S2159Ó"VRemove this call to "equals"; comparisons between unrelated types always return false.(èğ×ğøÿÿÿÿ8İù“ğõ,
+}squid:S2293ğ"YReplace the type specification in this constructor call with the diamond operator ("<>").(õ¹ĞÍÿÿÿÿÿ8âö»ïõ,
+|squid:S2293:"YReplace the type specification in this constructor call with the diamond operator ("<>").(õ¹ĞÍÿÿÿÿÿ8…¼Ãîõ,
+}squid:S2293†"YReplace the type specification in this constructor call with the diamond operator ("<>").(õ¹ĞÍÿÿÿÿÿ8ÒÚ“ñõ,
+Ysquid:S1854…"5Remove this useless assignment to local variable "a".(È“úÂıÿÿÿÿ8ËÌ‘ñõ,
+gsquid:CallToDeprecatedMethod"3Remove this use of "description"; it is deprecated.(èğ»úÿÿÿÿ8…¼Ãîõ,
+}squid:S2293Ñ"YReplace the type specification in this constructor call with the diamond operator ("<>").(õ¹ĞÍÿÿÿÿÿ8…¼Ãîõ,
+}squid:S2293¬"YReplace the type specification in this constructor call with the diamond operator ("<>").(õ¹ĞÍÿÿÿÿÿ8äÅñõ,
+[squid:S1854:"8Remove this useless assignment to local variable "list".(õ¹ĞÍÿÿÿÿÿ8…¼Ãîõ,
+Jsquid:S1481…"&Remove this unused "a" local variable.(È“úÂıÿÿÿÿ8ËÌ‘ñõ,
+|squid:S2293_"YReplace the type specification in this constructor call with the diamond operator ("<>").(õ¹ĞÍÿÿÿÿÿ8íß—ñõ,
+zsquid:S2159„"VRemove this call to "equals"; comparisons between unrelated types always return false.(èğ×ğøÿÿÿÿ8Ñ³Ùğõ,
+asquid:S1155<">Use isEmpty() to check whether the collection is empty or not.(É€°Îøÿÿÿÿ8…¼Ãîõ,

@@ -1,0 +1,25 @@
+
+usquid:S2293>"YReplace the type specification in this constructor call with the diamond operator ("<>").(™ºöºıÿÿÿÿ
+6squid:S1872r"Use "isAssignableFrom" instead.(ì©áö
+;squid:S1872s"Use "isAssignableFrom" instead.(ŠË±øÿÿÿÿ
+6squid:S1872u"Use "isAssignableFrom" instead.(ÜÃË·
+6squid:S1872v"Use "isAssignableFrom" instead.(˜Ÿòı
+6squid:S1872x"Use "isAssignableFrom" instead.(¨–à¾
+6squid:S1872y"Use "isAssignableFrom" instead.(ºĞŞÆ
+6squid:S1872{"Use "isAssignableFrom" instead.(ä¬­µ
+6squid:S1872|"Use "isAssignableFrom" instead.(øåœĞ
+<squid:S1872Œ"Use "isAssignableFrom" instead.(¥½›ûşÿÿÿÿ
+?squid:S1872¹"'Use an "instanceof" comparison instead.(µªä§
+bsquid:CommentedOutCodeLine;"<This block of commented-out lines of code should be removed.(•´ø
+hsquid:CommentedOutCodeLine¤"<This block of commented-out lines of code should be removed.(ûÕÆşÿÿÿÿ
+csquid:CommentedOutCodeLine§"<This block of commented-out lines of code should be removed.(ç¾Ö 
+bsquid:CommentedOutCodeLine©"<This block of commented-out lines of code should be removed.(Âİ•j
+csquid:CommentedOutCodeLine­"<This block of commented-out lines of code should be removed.(ç²À 
+Vsquid:S1118":Add a private constructor to hide the implicit public one.(ö—ƒöúÿÿÿÿ
+_squid:S2259a"CA "NullPointerException" could be thrown; "field" is nullable here.(Ù“ãªüÿÿÿÿ
+^squid:S00112:"FDefine and throw a dedicated exception instead of using a generic one.(Œçí¸
+^squid:S00112W"FDefine and throw a dedicated exception instead of using a generic one.(À©ºš
+?squid:S1148."#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+wsquid:S1149£"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(í…Ò‰
+wsquid:S1149²"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(ÍïºÎ
+Usquid:S1155F">Use isEmpty() to check whether the collection is empty or not.(¡‘…å

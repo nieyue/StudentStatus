@@ -1,0 +1,52 @@
+
+1squid:S1643"Use a StringBuilder instead.(ª¢¹¯
+Vsquid:S1075"ARefactor your code to get this URI from a customizable parameter.(„•¿•
+0squid:S3626"Remove this redundant jump.(ÉŠ©ƒ
+Dsquid:S2093"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ
+Dsquid:S2093"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ
+Dsquid:S2093"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ
+Dsquid:S2093"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ
+gsquid:S2095"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(úäÐÆýÿÿÿÿ
+dsquid:S2095"OUse try-with-resources or close this "InputStreamReader" in a "finally" clause.(ã­¶°
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ßÄžÆüÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ý€äÃÿÿÿÿÿ
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ŸÄ”Þ
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(·Îçùùÿÿÿÿ
+M
+squid:S106"9Replace this use of System.out or System.err by a logger.(¾Ý†‰
+M
+squid:S106"9Replace this use of System.out or System.err by a logger.(ššïó
+M
+squid:S106"9Replace this use of System.out or System.err by a logger.(åÅÌŠ
+L
+squid:S106"9Replace this use of System.out or System.err by a logger.(’˜Öb
+M
+squid:S106"9Replace this use of System.out or System.err by a logger.(ÀÒ‘¢
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(çï€úÿÿÿÿ
+M
+squid:S106"9Replace this use of System.out or System.err by a logger.(®Æç
+L
+squid:S106"9Replace this use of System.out or System.err by a logger.(²®5
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(ŒþÛÊûÿÿÿÿ
+M
+squid:S106"9Replace this use of System.out or System.err by a logger.(ýšåŒ
+M
+squid:S106"9Replace this use of System.out or System.err by a logger.(ô“Ô
+Lsquid:S2589"7Remove this expression which always evaluates to "true"(¢õ§˜
+Csquid:S1481")Remove this unused "line" local variable.(œá‰…ûÿÿÿÿ
+lsquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(ñ¬¬¿ûÿÿÿÿ
+?squid:S00108")Either remove or fill this block of code.(ŸäÁ‚
+?squid:S00108")Either remove or fill this block of code.(ŸäÁ‚
+?squid:S00108")Either remove or fill this block of code.(ŸäÁ‚
+?squid:S00108")Either remove or fill this block of code.(ŸäÁ‚
+gsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬çêƒ
+=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+=squid:S1148"#Use a logger to log this exception.(Âþÿâûÿÿÿÿ
+=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+=squid:S1148"#Use a logger to log this exception.(Âþÿâûÿÿÿÿ
+=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ

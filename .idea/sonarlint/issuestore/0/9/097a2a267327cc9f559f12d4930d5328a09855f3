@@ -1,0 +1,14 @@
+
+dsquid:S1192"JDefine a constant instead of duplicating this literal "accountId" 6 times.(…ˆË ùÿÿÿÿ
+nsquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(õ¼÷ë
+‡squid:S1319"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(¸š­ìûÿÿÿÿ
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(ñ©äÍüÿÿÿÿ
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(æ¨¤šøÿÿÿÿ
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(š—°øÿÿÿÿ
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(†Á¸ÿÿÿÿÿ
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(Çµß§úÿÿÿÿ

@@ -1,0 +1,13 @@
+
+usquid:S2293i"YReplace the type specification in this constructor call with the diamond operator ("<>").(™ºöºýÿÿÿÿ
+bsquid:CommentedOutCodeLine3"<This block of commented-out lines of code should be removed.(Ü™Ä¯
+Ä%squid:RedundantThrowsDeclarationCheck-"‹Remove the declaration of thrown exception 'com.fasterxml.jackson.core.JsonProcessingException', as it cannot be thrown from method's body.(ßãÝ–8Òãçéõ,
+rsquid:S1488$"[Immediately return this expression instead of assigning it to the temporary variable "xml".(ßáæß
+Nsquid:S1135="2Complete the task associated to this TODO comment.(» æžÿÿÿÿÿ
+gsquid:CommentedOutCodeLineP"<This block of commented-out lines of code should be removed.(íàÃÐþÿÿÿÿ
+gsquid:CommentedOutCodeLine."<This block of commented-out lines of code should be removed.(¥Ÿ´äûÿÿÿÿ
+Nsquid:S11357"2Complete the task associated to this TODO comment.(» æžÿÿÿÿÿ
+gsquid:CommentedOutCodeLinew"<This block of commented-out lines of code should be removed.(ÚöÉ†øÿÿÿÿ
+bsquid:CommentedOutCodeLine\"<This block of commented-out lines of code should be removed.(¾ÆúÀ
+rsquid:S1488S"[Immediately return this expression instead of assigning it to the temporary variable "xml".(ßáæß
+vsquid:S1488r"ZImmediately return this expression instead of assigning it to the temporary variable "o2".(ˆ´†üýÿÿÿÿ

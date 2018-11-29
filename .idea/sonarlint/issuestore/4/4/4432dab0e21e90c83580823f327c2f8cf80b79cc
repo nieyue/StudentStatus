@@ -1,0 +1,33 @@
+
+ijavascript:S2589¤"LRefactor this code so that this expression does not always evaluate to true.(…È 
+njavascript:S2589è"LRefactor this code so that this expression does not always evaluate to true.(ƒ‰‚ºøÿÿÿÿ
+javascript:S2692Ë	"bThis check ignores index 0; consider using 'includes' method to make this check safe and explicit.(’ë—›
+javascript:S2692Ö	"bThis check ignores index 0; consider using 'includes' method to make this check safe and explicit.(ÖìşĞ
+ajavascript:S2814A"ERename "body" as this name is already used in declaration at line 48.(‚Ìíç
+fjavascript:S2814ë"DRename "i" as this name is already used in declaration at line 1122.(ßêëÎıÿÿÿÿ
+ajavascript:S2814õ"DRename "i" as this name is already used in declaration at line 1122.(Öú‹é
+cjavascript:S2814B"BRename "d" as this name is already used in declaration at line 46.(íºÎ¦ÿÿÿÿÿ
+cjavascript:S2814¾"FRename "file" as this name is already used in declaration at line 552.(½Âü
+kjavascript:S2814C"JRename "newScript" as this name is already used in declaration at line 52.(´¤ıÍÿÿÿÿÿ
+=javascript:S1116>"Remove this empty statement.(ôŸìúÿÿÿÿ
+>javascript:S1116‘"Remove this empty statement.(ôŸìúÿÿÿÿ
+œjavascript:FutureReservedWordsh"mRename "package" identifier to prevent potential conflicts with future evolutions of the JavaScript language.(Ş‰ùÀøÿÿÿÿ
+vjavascript:S3973Ğ"YUse curly braces or indentation to denote the code conditionally executed by this "else".(ÔÍØ
+tjavascript:S3973Õ"WUse curly braces or indentation to denote the code conditionally executed by this "if".(æ¥Î
+{javascript:S3973×"YUse curly braces or indentation to denote the code conditionally executed by this "else".(„¶áìøÿÿÿÿ
+tjavascript:S3973à"WUse curly braces or indentation to denote the code conditionally executed by this "if".(ßÓù«
+djavascript:EvalI"IReview the arguments of this "eval" call to make sure they are validated.(ªÊ«
+cjavascript:UnusedVariable¶"8Remove the declaration of the unused 'endTime' variable.(¥õ÷ƒúÿÿÿÿ
+djavascript:UnusedVariable¶"9Remove the declaration of the unused 'moveTime' variable.(¥õ÷ƒúÿÿÿÿ
+ajavascript:UnusedVariable¶"6Remove the declaration of the unused 'moveY' variable.(¥õ÷ƒúÿÿÿÿ
+fjavascript:UnusedVariable°";Remove the declaration of the unused 'halfamonth' variable.(®«øÇüÿÿÿÿ
+_javascript:S1854°"=Remove this useless assignment to local variable "halfamonth"(®«øÇüÿÿÿÿ
+^javascript:S1854º"<Remove this useless assignment to local variable "startTime"(“Ô…úÿÿÿÿ
+Tjavascript:S1854¹"8Remove this useless assignment to local variable "speed"(‹ï½
+{javascript:S2703ª"^Add the "let", "const" or "var" keyword to this declaration of "photoExt" to make it explicit.(éºËñ
+tjavascript:S2703á"WAdd the "let", "const" or "var" keyword to this declaration of "s" to make it explicit.(Ç‹î§
+~javascript:S2703Á"\Add the "let", "const" or "var" keyword to this declaration of "result" to make it explicit.(¡Êˆİûÿÿÿÿ
+sjavascript:S2703İ"WAdd the "let", "const" or "var" keyword to this declaration of "M" to make it explicit.(Ş¢™^
+sjavascript:S2703à"WAdd the "let", "const" or "var" keyword to this declaration of "m" to make it explicit.(¯íñ4
+tjavascript:S2703Ş"WAdd the "let", "const" or "var" keyword to this declaration of "D" to make it explicit.(œÇ¢
+yjavascript:S2703ß"WAdd the "let", "const" or "var" keyword to this declaration of "h" to make it explicit.(Ïˆù‘ÿÿÿÿÿ

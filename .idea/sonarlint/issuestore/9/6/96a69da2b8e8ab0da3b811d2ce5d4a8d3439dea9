@@ -1,0 +1,20 @@
+
+rsquid:S1488$"[Immediately return this expression instead of assigning it to the temporary variable "md5".(Ú”½Ş
+wsquid:S14888"[Immediately return this expression instead of assigning it to the temporary variable "md5".(ªÙ×­úÿÿÿÿ
+¢%squid:RedundantThrowsDeclarationCheck;"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(ÙØ¤Şıÿÿÿÿ
+T
+squid:S106C"9Replace this use of System.out or System.err by a logger.( Õöùÿÿÿÿ
+T
+squid:S106E"9Replace this use of System.out or System.err by a logger.(ËíÀšøÿÿÿÿ
+T
+squid:S106I"9Replace this use of System.out or System.err by a logger.(×ù‚½ûÿÿÿÿ
+T
+squid:S106B"9Replace this use of System.out or System.err by a logger.(Ë¼Ó²ûÿÿÿÿ
+xsquid:S1488"\Immediately return this expression instead of assigning it to the temporary variable "sha1".(Ö „âúÿÿÿÿ
+rsquid:S1488."[Immediately return this expression instead of assigning it to the temporary variable "md5".(÷¢Ğ
+T
+squid:S106@"9Replace this use of System.out or System.err by a logger.(ÎË¡Æùÿÿÿÿ
+O
+squid:S106="9Replace this use of System.out or System.err by a logger.(ôõ·¼
+O
+squid:S106H"9Replace this use of System.out or System.err by a logger.(“°ˆ­

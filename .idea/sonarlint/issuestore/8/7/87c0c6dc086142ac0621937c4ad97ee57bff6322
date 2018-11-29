@@ -1,0 +1,11 @@
+
+bsquid:S3027N"FPut single-quotes around ',' to use the faster "indexOf(char)" method.(¨ìñ‚þÿÿÿÿ
+bsquid:S3027O"FPut single-quotes around ',' to use the faster "indexOf(char)" method.(¸ýú†þÿÿÿÿ
+dsquid:S1192""HDefine a constant instead of duplicating this literal "unknown" 5 times.(éÙìÓýÿÿÿÿ
+Ksquid:S1066N"/Merge this if statement with the enclosing one.(¨ìñ‚þÿÿÿÿ
+Psquid:S3400"9Remove this method and declare a constant for this value.(”·³›
+Msquid:S2692N"10 is a valid index, but is ignored by this check.(¨ìñ‚þÿÿÿÿ
+isquid:S37767"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(¥´×í
+Qsquid:S1118":Add a private constructor to hide the implicit public one.(³Ö¬½
+Ysquid:S2259I"BA "NullPointerException" could be thrown; "inet" is nullable here.(Òþ„€
+?squid:S1148G"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
