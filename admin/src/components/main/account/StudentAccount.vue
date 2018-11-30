@@ -1,12 +1,14 @@
-<!--账户管理 -->
+<!--学生管理 -->
 <template>
     <div class="body-wrap">
     <div class="body-btn-wrap">
-      <Button type='primary'  @click='add'>增加账户</Button>
+      <Button type='primary'  @click='add'>增加学生</Button>
+      <Button type='info' style="margin:0 20px;" @click='exportAccount'>账户导出</Button>
+      <Button type='error'  @click='deleteBatch'>批量删除</Button>
       <div class="search-wrap">
-          <Select v-model="params.roleId"  transfer class="search-wrap-input" >
+          <!-- <Select v-model="params.roleId"  transfer class="search-wrap-input" >
             <Option v-for="item in roleList" :value="item.roleId" :key="item.roleId">{{ item.name }}</Option>
-        </Select>
+        </Select> -->
         <Input v-model="params.realname" class="search-wrap-input" placeholder="姓名"></Input>
         <Select v-model="params.status" transfer class="search-wrap-input"  placeholder="状态，全部">
             <Option v-for="item in statusParamsList" :value="item.id" :key="item.id">{{ item.value }}</Option>
@@ -16,7 +18,7 @@
     </div>
 		 <!--新增 -->
      <Modal v-model="addAccountModel"
-           title="新增账户管理"
+           title="新增学生管理"
            :closable="false"
            :mask-closable="false"
            width="1000px"
@@ -61,8 +63,7 @@
             </div>
         </FormItem> -->
         <FormItem  label="出生年月日:">
-          <DatePicker type="datetimerange" placeholder="出生年月日" 
-          <DatePicker type="date" @on-change="getAddBirthDate" placeholder="出生年月日" style="width: 300px"></DatePicker>
+          <DatePicker type="date" v-model="addAccount.birthDate" placeholder="出生年月日" style="width: 300px"></DatePicker>
         </FormItem>
         <FormItem prop="regCerName" label="报考证书名称:">
           <Input type="text" v-model="addAccount.regCerName" placeholder="报考证书名称">
@@ -97,19 +98,18 @@
         </FormItem>
 
          <FormItem  label="预计取证时间:">
-          <DatePicker type="datetimerange" placeholder="预计取证时间" 
-          <DatePicker type="date" @on-change="getAddExpectGetCerDate" placeholder="预计取证时间" style="width: 300px"></DatePicker>
+          <DatePicker type="datetime"  v-model="addAccount.expectGetCerDate" placeholder="预计取证时间" style="width: 300px"></DatePicker>
         </FormItem>
         <FormItem prop="status" label="状态:">
           <Select v-model="addAccount.status" transfer size="large" style="width:100px">
               <Option v-for="item in statusList" :value="item.id" :key="item.id">{{ item.value }}</Option>
           </Select>
         </FormItem>
-        <FormItem prop="roleId" label="角色:">
+        <!-- <FormItem prop="roleId" label="角色:">
           <Select v-model="addAccount.roleId" transfer size="large" style="width:100px">
               <Option v-for="item in roleList" :value="item.roleId" :key="item.roleId">{{ item.name }}</Option>
           </Select>
-        </FormItem>
+        </FormItem> -->
       </Form>
       <div slot='footer'>
         <Button  @click='addCancel'>取消</Button>
@@ -122,7 +122,7 @@
     <!--新增end -->
 		 <!--修改 -->
      <Modal v-model="updateAccountModel"
-           title="修改账户管理"
+           title="修改学生管理"
            :closable="false"
            :mask-closable="false"
            width="1000px"
@@ -153,10 +153,10 @@
           <Input type="text" v-model="updateAccount.phone" placeholder="联系电话">
           </Input>
         </FormItem>
-        <FormItem prop="password" label="密码:">
+        <!-- <FormItem prop="password" label="密码:">
           <Input type="password" v-model="updateAccount.password" placeholder="密码">
           </Input>
-        </FormItem>
+        </FormItem> -->
         
         <!-- <FormItem prop="icon" label="图像(上传或者填写):">
             <my-upload :defaultUpload="addAccount.icon" @uploadList="getAddIcon"></my-upload> 
@@ -167,8 +167,7 @@
             </div>
         </FormItem> -->
         <FormItem  label="出生年月日:">
-          <DatePicker type="datetimerange" placeholder="出生年月日" 
-          <DatePicker type="date" @on-change="getUpdateBirthDate" placeholder="出生年月日" style="width: 300px"></DatePicker>
+          <DatePicker type="date" v-model="updateAccount.birthDate" placeholder="出生年月日" style="width: 300px"></DatePicker>
         </FormItem>
         <FormItem prop="regCerName" label="报考证书名称:">
           <Input type="text" v-model="updateAccount.regCerName" placeholder="报考证书名称">
@@ -203,19 +202,18 @@
         </FormItem>
 
          <FormItem  label="预计取证时间:">
-          <DatePicker type="datetimerange" placeholder="预计取证时间" 
-          <DatePicker type="date" @on-change="getUpdateExpectGetCerDate" placeholder="预计取证时间" style="width: 300px"></DatePicker>
+          <DatePicker type="datetime"  v-model="addAccount.expectGetCerDate" placeholder="预计取证时间" style="width: 300px"></DatePicker>
         </FormItem>
         <FormItem prop="status" label="状态:">
           <Select v-model="updateAccount.status" transfer size="large" style="width:100px">
               <Option v-for="item in statusList" :value="item.id" :key="item.id">{{ item.value }}</Option>
           </Select>
         </FormItem>
-        <FormItem prop="roleId" label="角色:">
+       <!--  <FormItem prop="roleId" label="角色:">
           <Select v-model="updateAccount.roleId"  transfer size="large" style="width:100px">
               <Option v-for="item in roleList" :value="item.roleId" :key="item.roleId">{{ item.name }}</Option>
           </Select>
-        </FormItem>
+        </FormItem> -->
       </Form>
       <div slot='footer'>
         <Button  @click='updateCancel'>取消</Button>
@@ -235,7 +233,7 @@
 <script>
 import twocitylist from '@/components/service/twocitylist'
 export default {
-  name: 'Account',
+  name: 'StudentAccount',
   data () {
     return {
       routerPath:this.$route.path,
@@ -269,20 +267,22 @@ export default {
 			addAccountModel:false,
 			addLoading:false,
 			addAccountRules: {
+                sid: [
+                    {required: true, message: '学号为必填项', trigger: 'blur'}
+                    ],
                 phone: [
                     {required: true, message: '手机号为必填项', trigger: 'blur'}
                     ]
                 },
 			addAccount:{
-        icon:'',
-        identityCardsHoldImg:'',
-        identityCardsFrontImg:'',
-        identityCardsBackImg:''
       },
 			//修改参数
 			updateAccountModel:false,
 			updateLoading:false,
 			updateAccountRules: {
+                sid: [
+                    {required: true, message: '学号为必填项', trigger: 'blur'}
+                    ],
                 phone: [
                     {required: true, message: '手机号为必填项', trigger: 'blur'}
                     ]
@@ -296,7 +296,13 @@ export default {
         
 	    accountColumns: [
         {
+          type: 'selection',
+          width: 60,
+          align: 'center' 
+        },
+        {
           title: '序号',
+          //type: "index2",
            minWidth:100,
           align:'center',
           render: (h, params) => {
@@ -317,24 +323,55 @@ export default {
           align:'center'
         },
         {
-        	title:'学号',
-            key:'realname',
+        	title:'学号(登录账户)',
+            key:'sid',
             minWidth:100,
           align:'center'
         },
-        {
-        	title:'注册手机号',
+          {
+        	title:'联系电话(登录账户)',
             key:'phone',
             minWidth:100,
           align:'center'
         },
+         {
+        	title:'性别',
+            key:'sex',
+            minWidth:100,
+          align:'center',
+          render: (h, params) => {
+            let sexvalue="";
+            this.sexList.forEach(element => {
+              if(element.id==params.row.sex){
+                sexvalue=element.value;
+              }
+            });
+             return  h('span',sexvalue);
+          }
+        }, 
         {
-        	title:'昵称',
-            key:'nickname',
+        	title:'民族',
+            key:'nation',
             minWidth:100,
           align:'center'
         },
-         {
+        {
+        	title:'身份证',
+            key:'identityCards',
+            minWidth:100,
+          align:'center'
+        },
+        {
+        	title:'出生年月日',
+            key:'birthDate',
+            minWidth:100,
+          align:'center',
+          render: (h, params) => {
+            let birthDatevalue=params.row.birthDate?params.row.birthDate.substr(0,10):'';
+             return  h('span',birthDatevalue);
+          }
+        },
+      /*    {
         	title:'图像',
             key:'icon',
             minWidth:100,
@@ -349,135 +386,57 @@ export default {
               }
             })
           }
-        },
+        }, */
+       
         {
-        	title:'性别',
-            key:'sex',
+          title:'报考证书名称',
+          key:'regCerName',
             minWidth:100,
-          align:'center',
-          render: (h, params) => {
-            let sexvalue="";
-            this.sexList.forEach(element => {
-              if(element.id==params.row.sex){
-                sexvalue=element.value;
-              }
-            });
-             return  h('span',sexvalue);
-          }
-        },
-        {
-        	title:'国家',
-            minWidth:100,
-          align:'center',
-          render: (h, params) => {
-              let country=params.row.country||'';
-              return h('span', country);  
-          }
+          align:'center'
         },
       
         {
-        	title:'email',
-            key:'email',
+        	title:'报考专业',
+            key:'regMajor',
             minWidth:100,
           align:'center'
         },
         {
-        	title:'安全等级',
-            key:'auth',
-            minWidth:100,
-          align:'center',
-          render: (h, params) => {
-            let safetyGradevalue="";
-            this.safetyGradeList.forEach(element => {
-              if(element.id==params.row.safetyGrade){
-                safetyGradevalue=element.value;
-              }
-            });
-             return  h('span',safetyGradevalue);
-          }
-        },
-        {
-        	title:'认证',
-            key:'auth',
-            minWidth:100,
-          align:'center',
-          render: (h, params) => {
-            let authvalue="";
-            this.authList.forEach(element => {
-              if(element.id==params.row.auth){
-                authvalue=element.value;
-              }
-            });
-             return  h('span',authvalue);
-          }
-        },
-        {
-        	title:'身份证',
-            key:'identityCards',
+        	title:'层次',
+            key:'gradation',
             minWidth:100,
           align:'center'
         },
         {
-        	title:'手持身份证上半身照',
-            key:'identityCardsHoldImg',
+        	title:'学制',
+            key:'educationalSystem',
             minWidth:100,
-          align:'center',
-          render: (h, params) => {
-            return h('img', {
-              attrs: {
-                src: params.row.identityCardsHoldImg
-              },
-              style: {
-                width: '45px'
-              }
-            })
-          }
+          align:'center'
         },
         {
-        	title:'身份证正面',
-            key:'identityCardsFrontImg',
+        	title:'总费用',
+            key:'totalCost',
             minWidth:100,
-          align:'center',
-          render: (h, params) => {
-            return h('img', {
-              attrs: {
-                src: params.row.identityCardsFrontImg
-              },
-              style: {
-                width: '45px'
-              }
-            })
-          }
-        },
-           {
-        	title:'身份证反面',
-            key:'identityCardsFrontImg',
-            minWidth:100,
-          align:'center',
-          render: (h, params) => {
-            return h('img', {
-              attrs: {
-                src: params.row.identityCardsBackImg
-              },
-              style: {
-                width: '45px'
-              }
-            })
-          }
+          align:'center'
         },
         {
-        	title:'电话',
-            key:'telephone',
+        	title:'已缴费',
+            key:'alreadyPay',
+            minWidth:100,
+          align:'center'
+        },
+        {
+        	title:'欠费',
+            key:'arrears',
             minWidth:100,
           align:'center'
         },
          {
-        	title:'角色名',
-          minWidth:100,
-          align:'center',
-          render: (h, params) => {
-            return h('span',params.row.role.name)
-          }
+        	title:'预计取证时间',
+          key:'expectGetCerDate',
+           minWidth:100,
+          sortable: true,
+          align:'center'
         },
         {
         	title:'状态',
@@ -558,238 +517,15 @@ export default {
                       currentPage:1,//当前页
                       accountId:params.row.accountId
                     });
-                    this.$router.push('/main/finance/'+pp);
+                    this.$router.push('/main/account/studentInfo/'+pp);
                   }
                 }
-              }, '财务');
-            var varhh22=  h('Button', {
-                props: {
-                  type: 'info',
-                  ghost:'',
-                  size: 'small'
-                },
-                style: {
-                  margin: marginstyle
-                },
-                on: {
-                  click: () => {
-                    let  pp=JSON.stringify({
-                      currentPage:1,//当前页
-                      accountId:params.row.accountId
-                    });
-                    this.$router.push('/main/financeRecord/'+pp);
-                  }
-                }
-              }, '财务记录');
-          
-            var varhh31=  h('Button', {
-                props: {
-                  type: 'warning',
-                  size: 'small'
-                },
-                style: {
-                  margin: marginstyle
-                },
-                on: {
-                  click: () => {
-                      let  pp=JSON.stringify({
-                      currentPage:1,//当前页
-                      accountId:params.row.accountId
-                    });
-                    this.$router.push('/main/bankCard/'+pp);
-                  }
-                }
-              }, '银行卡');
-            var varhh32=  h('Button', {
-                props: {
-                  type: 'warning',
-                  ghost:'',
-                  size: 'small'
-                },
-                style: {
-                  margin: marginstyle
-                },
-                on: {
-                  click: () => {
-                      let  pp=JSON.stringify({
-                      currentPage:1,//当前页
-                      accountId:params.row.accountId
-                    });
-                    this.$router.push('/main/company/'+pp);
-                  }
-                }
-              }, '公司');
-            var varhh41=  h('Button', {
-                props: {
-                  type: 'success',
-                  size: 'small'
-                },
-                style: {
-                  margin: marginstyle
-                },
-                on: {
-                  click: () => {
-                      let  pp=JSON.stringify({
-                      currentPage:1,//当前页
-                      accountId:params.row.accountId
-                    });
-                    this.$router.push('/main/thirdInfo/'+pp);
-                  }
-                }
-              }, '第三方信息');
-            var varhh42=  h('Button', {
-                props: {
-                  type: 'success',
-                  ghost:'',
-                  size: 'small'
-                },
-                style: {
-                  margin: marginstyle
-                },
-                on: {
-                  click: () => {
-                      let  pp=JSON.stringify({
-                      currentPage:1,//当前页
-                      accountId:params.row.accountId
-                    });
-                    this.$router.push('/main/collect/'+pp);
-                  }
-                }
-              }, '汇总');
-            var varhh51=  h('Button', {
-                props: {
-                  type: 'default',
-                  size: 'small'
-                },
-                style: {
-                  margin: marginstyle
-                },
-                on: {
-                  click: () => {
-                      let  pp=JSON.stringify({
-                      currentPage:1,//当前页
-                      accountId:params.row.accountId
-                    });
-                    this.$router.push('/main/media/'+pp);
-                  }
-                }
-              }, '媒体');
-            var varhh52=  h('Button', {
-                props: {
-                  type: 'dashed',
-                  size: 'small'
-                },
-                style: {
-                  margin: marginstyle
-                },
-                on: {
-                  click: () => {
-                      let  pp=JSON.stringify({
-                      currentPage:1,//当前页
-                      accountId:params.row.accountId
-                    });
-                    this.$router.push('/main/readMedia/'+pp);
-                  }
-                }
-              }, '阅读媒体');
-            var varhh53=  h('Button', {
-                props: {
-                  type: 'info',
-                  size: 'small'
-                },
-                style: {
-                  margin: marginstyle
-                },
-                on: {
-                  click: () => {
-                      let  pp=JSON.stringify({
-                      currentPage:1,//当前页
-                      accountId:params.row.accountId
-                    });
-                    this.$router.push('/main/positionMedia/'+pp);
-                  }
-                }
-              }, '位置媒体');
-            var varhh61=  h('Button', {
-                props: {
-                  type: 'error',
-                  size: 'small'
-                },
-                style: {
-                  margin: marginstyle
-                },
-                on: {
-                  click: () => {
-                      let  pp=JSON.stringify({
-                      currentPage:1,//当前页
-                      accountId:params.row.accountId
-                    });
-                    this.$router.push('/main/readAdvertise/'+pp);
-                  }
-                }
-              }, '阅读广告');
-            var varhh62=  h('Button', {
-                props: {
-                  type: 'error',
-                  ghost:'',
-                  size: 'small'
-                },
-                style: {
-                  margin: marginstyle
-                },
-                on: {
-                  click: () => {
-                      let  pp=JSON.stringify({
-                      currentPage:1,//当前页
-                      accountId:params.row.accountId
-                    });
-                    this.$router.push('/main/positionAdvertise/'+pp);
-                  }
-                }
-              }, '位置广告');
-              var s=h("div","");
-              var commons=[
-                h("div",[
+              }, '学生信息');
+			  let s= h("div",[
                   varhh11
-                  //,varhh12
-                ]),
-                h("div",[
-                  varhh21
-                  ,varhh22
-                ]),
-                h("div",[
-                  varhh31,
-                  varhh32
-                ]),
-                h("div",[
-                  varhh41,
-                  varhh42
-                ]),
-              ]
-              var medias=[
-                h("div",[
-                  varhh51,
-                  varhh52,
-                ]),
-                h("div",[
-                  varhh53,
-                ]),
-              ]
-              var advertises=[
-                h("div",[
-                  varhh61,
-                  varhh62
-                ]),
-              ]
-              //媒体主路径
-              if(this.routerPath=="/main/account/mediaAccount"){
-                commons=commons.concat(medias);
-              }
-              //广告主路径
-              if(this.routerPath=="/main/account/advertiseAccount"){
-                commons=commons.concat(advertises);
-              }
-			s=h("div",commons);
+                  ,varhh12
+                  ,varhh21
+                ]);
             return s;
           }
         }
@@ -809,32 +545,7 @@ export default {
       this.params.pageNum = (this.params.currentPage-1)*this.params.pageSize+this.params.startNum;
       this.getList()
     },
-    //获取增加的图片
-    getAddIcon(data){
-      this.addAccount.icon=data[0].url
-    },
-    getAddIdentityCardsHoldImg(data){
-      this.addAccount.identityCardsHoldImg=data[0].url
-    },
-    getAddIdentityCardsFrontImg(data){
-      this.addAccount.identityCardsFrontImg=data[0].url
-    },
-    getAddIdentityCardsBackImg(data){
-      this.addAccount.identityCardsBackImg=data[0].url
-    },
-    //获取修改的图片
-    getUpdateIcon(data){
-      this.updateAccount.icon=data[0].url
-    },
-    getUpdateIdentityCardsHoldImg(data){
-      this.updateAccount.identityCardsHoldImg=data[0].url
-    },
-    getUpdateIdentityCardsFrontImg(data){
-      this.updateAccount.identityCardsFrontImg=data[0].url
-    },
-    getUpdateIdentityCardsBackImg(data){
-      this.updateAccount.identityCardsBackImg=data[0].url
-    },
+
   //获取列表
    getRoleList () {
 
@@ -851,62 +562,16 @@ export default {
        listUrl:'/role/list',
        data:'roleList',
        success:()=>{
-           //初始化
-        this.addAccount={
-            icon:'',
-            identityCardsHoldImg:'',
-            identityCardsFrontImg:'',
-            identityCardsBackImg:'',
-            sex:0,
-            age:18,
-            safetyGrade:1,
-            country:'中国',
-            auth:0,
-            status:0,
-            roleId:this.roleList[0].roleId
-        };
+        
         let rll=this.roleList.length;
         for(let i=0;i<rll;i++){
-            //如果当前管理员非超级管理员
-              if(!this.business.getIsSuperAdmin()
-              &&this.roleList[i].name!="用户" 
-              &&this.roleList[i].name!="媒体主"
-              &&this.roleList[i].name!="广告主"){
+            //如果当前管理员非学生
+              if(!this.business.getIsStudentAdmin()
+              &&this.roleList[i].name!="学生"){
                 this.roleList.splice(i,1)
               rll--;
               i--;
               }
-              //路径为管理员账户
-       else if(this.routerPath=="/main/account/managerAccount"){
-          if(this.roleList[i].name=='用户'
-          ||this.roleList[i].name=='媒体主'
-          ||this.roleList[i].name=='广告主'){
-           this.roleList.splice(i,1);
-            rll--;
-            i--;
-          }
-          //路径为用户账户
-       }else if(this.routerPath=="/main/account/userAccount"){
-          if(this.roleList[i].name!='用户'){
-             this.roleList.splice(i,1);
-            rll--;
-            i--;
-          }
-          }
-          else if(this.routerPath=="/main/account/mediaAccount"){
-          if(this.roleList[i].name!='媒体主'){
-             this.roleList.splice(i,1);
-            rll--;
-            i--;
-          }
-          }
-          else if(this.routerPath=="/main/account/advertiseAccount"){
-          if(this.roleList[i].name!='广告主'){
-             this.roleList.splice(i,1);
-            rll--;
-            i--;
-          }
-          }
         }
         if(this.roleList[0] &&this.roleList[0].roleId){
           this.params.roleId=this.roleList[0].roleId;
@@ -936,6 +601,16 @@ export default {
   //增加
 	 add (params) {
       this.addAccountModel = true
+         //初始化
+        this.addAccount={
+            icon:'',
+            totalCost:0,
+            alreadyPay:0,
+            arrears:0,
+            sex:0,
+            status:0,
+            roleId:this.roleList[0].roleId
+        };
       
     },
 		//增加取消
@@ -956,6 +631,8 @@ export default {
      * p.loading loading
      * p.showModel 界面模型显示隐藏
      */
+    this.addAccount.birthDate=this.utils.getTime(this.addAccount.birthDate)
+    this.addAccount.expectGetCerDate=this.utils.getTime(this.addAccount.expectGetCerDate)
     this.axiosbusiness.add(this,{
       ref:'addAccount',
       url:'/account/add',
@@ -972,7 +649,6 @@ export default {
           url:'/account/load?accountId='+params.accountId,
          data:'updateAccount',
          success:()=>{
-            this.updateProvinceCity=twocitylist.getValueByLabel(this.updateAccount.province,this.updateAccount.city)
          }
        })
     },
@@ -995,6 +671,8 @@ export default {
      * p.showModel 界面模型显示隐藏
      */
     delete this.updateAccount.role;
+    this.addAccount.birthDate=this.utils.getTime(this.addAccount.birthDate)
+    this.addAccount.expectGetCerDate=this.utils.getTime(this.addAccount.expectGetCerDate)
     this.axiosbusiness.update(this,{
       ref:'updateAccount',
       url:'/account/update',
@@ -1019,6 +697,40 @@ export default {
       url:'/account/delete',
       requestObject:'deleteAccount'
     })
+    },
+    //批量删除
+    deleteBatch(){
+      //获取删除对象数组
+      var als=this.$refs.table.getSelection();
+      var ais=[];
+      for (let i = 0; i < als.length; i++) {
+        var  a = als[i];
+        ais.push(a.accountId)
+      }
+      if(ais.length<=0){
+        this.$Message.error("最少选一个")
+        return;
+      }
+       this.deleteBatchAccount={
+          "accountIds":ais.toString()
+        };
+    this.axiosbusiness.delete(this,{
+      url:'/account/deleteBatch',
+      requestObject:'deleteBatchAccount'
+    })
+    },
+    //账户导出
+    exportAccount(){
+      var als=this.$refs.table.getSelection();
+      if(als.length<=0){
+        this.$Message.error("最少选一个")
+        return;
+      }
+      this.$refs.table.exportCsv({
+          filename: '学生数据',
+          columns: this.accountColumns.filter((data, index) => index>=2),
+          data: als
+      });
     }
   },
    watch: {
@@ -1030,12 +742,6 @@ export default {
     },
   created () {
     this.getRoleList();
-    //判断是否超级管理员
-        this.isSuperAdmin=this.business.getIsSuperAdmin()
-       //判断是否教师
-        this.isTeacherAdmin=this.business.getIsTeacherAdmin()
-       //判断是否学生
-        this.isStudentAdmin=this.business.getIsStudentAdmin()
   },
   mounted () {
 

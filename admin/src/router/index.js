@@ -35,50 +35,29 @@ const router= new Router({
           component: resolve=>require(['@/components/main/config/Welcome'],resolve)
         },
         {
-          path: 'account',
+          path: 'account/selfAccount',
           name: '个人信息',
           component: resolve=>require(['@/components/main/account/SelfAccount'],resolve),
-          children:[
-            {
-              path: 'selfAccount',
-              name: '个人信息',
-              component:  resolve=>require(['@/components/main/account/SelfAccount'],resolve)
-          },]
         },
         {
-          path: 'account',
-          name: '管理员账户',
+          path: 'account/managerAccount',
+          name: '管理员',
           component: resolve=>require(['@/components/main/account/ManagerAccount'],resolve),
-          children:[
-            {
-              path: 'managerAccount',
-              name: '管理员账户',
-              component:  resolve=>require(['@/components/main/account/ManagerAccount'],resolve)
-          },]
         },
         {
-          path: 'account',
-          name: '教师账户',
+          path: 'account/teacherAccount',
+          name: '教师',
           component: resolve=>require(['@/components/main/account/TeacherAccount'],resolve),
-          children:[
-            {
-              path: 'teacherAccount',
-              name: '教师',
-              component: resolve=>require(['@/components/main/account/TeacherAccount'],resolve),
-            }
-          ]
         },
         {
-          path: 'account',
-          name: '学生账户',
+          path: 'account/studentAccount',
+          name: '学生',
           component: resolve=>require(['@/components/main/account/StudentAccount'],resolve),
-          children:[
-            {
-              path: 'studentAccount',
-              name: '学生',
-              component: resolve=>require(['@/components/main/account/StudentAccount'],resolve),
-            }
-          ]
+        },
+        {
+          path: 'account/studentInfo/:pathParams',
+          name: '学生信息',
+          component: resolve=>require(['@/components/main/account/StudentInfo'],resolve),
         },
         /* {
           path: 'role/:pathParams',

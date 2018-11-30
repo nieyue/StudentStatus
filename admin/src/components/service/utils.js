@@ -38,6 +38,15 @@ export default {
     let timer = year + '-' + month + '-' + day 
     return timer
   },
+  /*
+  *获取年
+  */
+ getYear(time) {
+  let timec = new Date(time)
+  const year = timec.getFullYear()
+  let timer = year 
+  return timer
+},
 /*
   *递归 把array数组递归成属性挂载在$this对象上
   *p.str='b.c.d.ee.cc.22' 字符串

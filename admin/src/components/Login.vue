@@ -4,10 +4,10 @@
   <!--顶部-->
       <top-bar @islogin="getIslogin"></top-bar>
   <!--顶部 end -->
-    <div class="login-wrap">
+    <div class="login-wrap" style="background:url('/static/banner1.png') no-repeat;">
       <Form ref="account"  :label-width="0" class="login-account" :model="account" :rules="loginAccountRules">
         <FormItem prop="adminName" class="login-account-inputwrap">
-            <Input type="text"  v-model="account.adminName" size="large" placeholder="输入手机号/email" class="login-account-input">
+            <Input type="text"  v-model="account.adminName" size="large" placeholder="输入手机号/学号" class="login-account-input">
                 <Icon type="ios-phone-portrait" slot="prefix"/>
             </Input>
         </FormItem>

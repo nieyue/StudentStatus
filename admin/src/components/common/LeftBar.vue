@@ -15,7 +15,7 @@
                         <Icon type="md-person" />
                         <span>学生管理</span>
                     </template>
-                    <MenuItem name="/main/account/stduentAccount">
+                    <MenuItem name="/main/account/studentAccount">
                         <Icon type="ios-contact" />
                         <span>学生</span>
                     </MenuItem> 
@@ -54,20 +54,20 @@
                         <span>权限</span>
                     </MenuItem>
                 </Submenu> -->
-                <Submenu v-if="isSuperAdmin" name="system">
+                <!-- <Submenu v-if="isSuperAdmin" name="system">
                     <template slot="title">
                         <Icon type="ios-people" />
                         <span>系统管理</span>
                     </template>
-                   <!--  <MenuItem  name="/main/system/druid">
+                    <MenuItem  name="/main/system/druid">
                         <Icon type="ios-man" />
                         <span>数据库监控</span>
-                    </MenuItem> -->
+                    </MenuItem>
                     <MenuItem  name="/main/system/swagger">
                         <Icon type="ios-man" />
                         <span>API接口管理(swagger)</span>
                     </MenuItem>
-                </Submenu>
+                </Submenu> -->
             </Menu>
         </Sider>
 </template>

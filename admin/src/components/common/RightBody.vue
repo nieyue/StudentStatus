@@ -5,7 +5,7 @@
                 <Button type="text"  class="rightbody-header-left" icon="ios-skip-backward" @click="navbackward"></Button>
                 <div class="rightbody-header-body-wrap" ref="road">
                     <div class="rightbody-header-body" ref="navroad"  :style="{marginLeft:navroadMarginLeft+'px',transition:transition}">
-                        <div class="rightbody-header-body-item-wrap" :style="{backgroundColor:nav.iscurrent?'#2db7f5':'#fff'}" v-for="nav in navList" >
+                        <div class="rightbody-header-body-item-wrap" :style="{background:nav.iscurrent?'linear-gradient(90deg, rgb(32, 32, 243), rgb(165, 161, 232))':'linear-gradient(90deg,#fff,#fff)'}" v-for="nav in navList" >
                             <div class="rightbody-header-body-item" @click="goNav(nav)">
                                 <div class="rightbody-header-body-item-name" :style="{color:nav.iscurrent?'#fff':'#000'}"  v-text="nav.name">
                                 </div>
@@ -19,13 +19,17 @@
                 <Button type="text"  class="rightbody-header-right" icon="ios-skip-forward" @click="navforward"></Button>
             </div>
             <content class="rightbody-content">
+                 <div style="display:inline-block;line-height:20px">
+                     
+                    <Button type="error" size = 'small' @click="goBack">
+                       <Icon type="ios-arrow-back" />
+                       
+                        </Button>
+                </div> 
                 <Breadcrumb class="rightbody-content-crumb">
                     <BreadcrumbItem>主页</BreadcrumbItem>
                     <BreadcrumbItem > {{$route.name}}</BreadcrumbItem>
                 </Breadcrumb>
-                 <div style="display:inline-block">
-                    <Button type="info" size = 'small' @click="goBack">返回</Button>
-                </div>
                 <Card class="rightbody-content-body" >
                     <div style="height: auto">
                          <router-view></router-view>

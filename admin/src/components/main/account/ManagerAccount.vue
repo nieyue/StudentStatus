@@ -4,9 +4,9 @@
     <div class="body-btn-wrap">
       <Button type='primary'  @click='add'>增加账户</Button>
       <div class="search-wrap">
-          <Select v-model="params.roleId"  transfer class="search-wrap-input" >
+          <!-- <Select v-model="params.roleId"  transfer class="search-wrap-input" >
             <Option v-for="item in roleList" :value="item.roleId" :key="item.roleId">{{ item.name }}</Option>
-        </Select>
+        </Select> -->
         <Select v-model="params.status" transfer class="search-wrap-input"  placeholder="状态，全部">
             <Option v-for="item in statusParamsList" :value="item.id" :key="item.id">{{ item.value }}</Option>
         </Select>
@@ -342,11 +342,7 @@ export default {
        listUrl:'/role/list',
        data:'roleList',
        success:()=>{
-           //初始化
-        this.addAccount={
-            status:0,
-            roleId:this.roleList[0].roleId,
-        };
+           
       
         let roleListLength=this.roleList.length;
         for(let i=0;i<roleListLength;i++){
@@ -398,7 +394,11 @@ export default {
   //增加
 	 add (params) {
       this.addAccountModel = true
-      
+      //初始化
+        this.addAccount={
+            status:0,
+            roleId:this.roleList[0].roleId,
+        };
     },
 		//增加取消
 		 addCancel () {

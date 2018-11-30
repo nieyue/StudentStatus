@@ -1,7 +1,7 @@
 
 zsquid:S2159Œ"VRemove this call to "equals"; comparisons between unrelated types always return false.(êÎÉ›ýÿÿÿÿ8³ú¸ñõ,
-wsquid:S22936"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÂÏ·›8³ú¸ñõ,
-xsquid:S2293Š"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÂÏ·›8³ú¸ñõ,
-gsquid:CallToDeprecatedMethod"3Remove this use of "description"; it is deprecated.(ûêêÐùÿÿÿÿ8³ú¸ñõ,
-Vsquid:S18546"8Remove this useless assignment to local variable "list".(ÂÏ·›8³ú¸ñõ,
 asquid:S11558">Use isEmpty() to check whether the collection is empty or not.(É€°Îøÿÿÿÿ8³ú¸ñõ,
+xsquid:S2293Š"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÂÏ·›8³ú¸ñõ,
+Vsquid:S18546"8Remove this useless assignment to local variable "list".(ÂÏ·›8³ú¸ñõ,
+wsquid:S22936"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÂÏ·›8³ú¸ñõ,
+gsquid:CallToDeprecatedMethod"3Remove this use of "description"; it is deprecated.(ûêêÐùÿÿÿÿ8³ú¸ñõ,

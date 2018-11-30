@@ -1,12 +1,12 @@
-<!--账户管理 -->
+<!-- 教师管理 -->
 <template>
     <div class="body-wrap">
     <div class="body-btn-wrap">
-      <Button type='primary'  @click='add'>增加账户</Button>
+      <Button type='primary'  @click='add'>增加教师</Button>
       <div class="search-wrap">
-          <Select v-model="params.roleId"  transfer class="search-wrap-input" >
+          <!-- <Select v-model="params.roleId"  transfer class="search-wrap-input" >
             <Option v-for="item in roleList" :value="item.roleId" :key="item.roleId">{{ item.name }}</Option>
-        </Select>
+        </Select> -->
         <Input v-model="params.realname" class="search-wrap-input" placeholder="姓名"></Input>
         <Select v-model="params.status" transfer class="search-wrap-input"  placeholder="状态，全部">
             <Option v-for="item in statusParamsList" :value="item.id" :key="item.id">{{ item.value }}</Option>
@@ -16,7 +16,7 @@
     </div>
 		 <!--新增 -->
      <Modal v-model="addAccountModel"
-           title="新增账户管理"
+           title="新增教师管理"
            :closable="false"
            :mask-closable="false"
            width="1000px"
@@ -84,7 +84,7 @@
     <!--新增end -->
 		 <!--修改 -->
      <Modal v-model="updateAccountModel"
-           title="修改账户管理"
+           title="修改教师管理"
            :closable="false"
            :mask-closable="false"
            width="1000px"
@@ -403,13 +403,7 @@ export default {
        listUrl:'/role/list',
        data:'roleList',
        success:()=>{
-           //初始化
-        this.addAccount={
-            icon:'',
-            sex:0,
-            status:0,
-            roleId:this.roleList[0].roleId
-        };
+         
         
         let rll=this.roleList.length;
         for(let i=0;i<rll;i++){
@@ -449,6 +443,13 @@ export default {
   //增加
 	 add (params) {
       this.addAccountModel = true
+        //初始化
+        this.addAccount={
+            icon:'',
+            sex:0,
+            status:0,
+            roleId:this.roleList[0].roleId
+        };
       
     },
 		//增加取消
@@ -544,12 +545,8 @@ export default {
     },
   created () {
     this.getRoleList();
-    //判断是否超级管理员
-        this.isSuperAdmin=this.business.getIsSuperAdmin()
-       //判断是否教师
-        this.isTeacherAdmin=this.business.getIsTeacherAdmin()
-       //判断是否学生
-        this.isStudentAdmin=this.business.getIsStudentAdmin()
+   
+      
   },
   mounted () {
 

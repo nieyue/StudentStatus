@@ -60,7 +60,7 @@
 <!-- 更新学生信息 -->
 <update id="updateStudentInfo" parameterType="StudentInfo" >
     UPDATE 
-    	studentInfo_tb
+    	student_info_tb
 	<set>
 		<if test="examinationAccount!=null">
 			examination_account=#{examinationAccount},

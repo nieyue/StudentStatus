@@ -7,15 +7,19 @@
             <span class="topbar-left-title" style="font-size:2rem;line-height:6rem;margin-left:2rem;"  :style="{fontSize:titleFontSize,marginLeft:titleMarginLeft}" >学籍管理系统</span>
        
         </div>
-        <div style="display:inline-block;height:82px;vertical-align:top;line-height:82px;" v-show="this.account.accountId">
+        <div style="display:inline-block;height:82px;vertical-align:top;line-height:82px;" v-show="account.accountId">
           <Icon @click.native="collapsedSider"  :class="rotateIcon"  :style="{margin: '0 20px'}" type="md-menu" size="50"></Icon>
+        </div>
+        <div style="display:inline-block;height:82px;vertical-align:top;line-height:82px;font-size:1.6rem;"  v-show="account.accountId">
+           <span   style="color:#ef570b;font-weight:bold; ">{{account==null?'':account.role==null?'':account.role.name}}端</span>
         </div>
        <!--  <div class="topbar-loginregister" v-if="!islogin">
           <router-link class="footer-bar-company" to="/login"><Button size="large" type="primary" ghost>登录</Button></router-link>
           <router-link class="footer-bar-company" to="/register"><Button size="large" type="primary">注册</Button></router-link>
         </div> -->
         <div class="topbar-right" v-if="islogin">
-            <span  class="topbar-right-logintext" v-text="account.realname||account.nickname||account.phone" ></span>
+           
+            <span  class="topbar-right-logintext" style="color:#ccc;" v-text="account.realname||account.nickname||account.phone" ></span>
             <Button type="text"  class="topbar-right-loginout" @click="loginout">退出</Button>
         </div>
     </div>

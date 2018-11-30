@@ -4,6 +4,7 @@ import com.nieyue.bean.Account;
 import com.nieyue.exception.*;
 import com.nieyue.service.AccountService;
 import com.nieyue.util.MyDESutil;
+import com.nieyue.util.NumberUtil;
 import com.nieyue.util.ResultUtil;
 import com.nieyue.util.StateResultList;
 import io.swagger.annotations.Api;
@@ -142,10 +143,17 @@ public class AccountController {
 	@ApiOperation(value = "账户增加", notes = "账户增加")
 	@RequestMapping(value = "/add", method = {RequestMethod.GET,RequestMethod.POST})
 	public @ResponseBody StateResultList<List<Account>> addAccount(@ModelAttribute Account account, HttpSession session) {
+
 		String password = account.getPassword();
 		if(password==null||password.length()<6||password.length()>18){
 			throw new CommonRollbackException("密码长度6-18");//旧密码错误
 
+		}
+		//账户已经存在
+		if(accountService.loginAccount(account.getPhone(), null,null)!=null
+				||accountService.loginAccount(account.getSid(), null,null)!=null
+		){
+			throw new AccountIsExistException();//账户已经存在
 		}
 		account.setPassword(MyDESutil.getMD5(password));
 		boolean am = accountService.addAccount(account);
@@ -171,6 +179,35 @@ public class AccountController {
 		if(dm){
 			List<Account> list = new ArrayList<Account>();
 			list.add(account);
+			return ResultUtil.getSlefSRSuccessList(list);
+		}
+		return ResultUtil.getSlefSRFailList(null);
+	}
+	/**
+	 * 账户批量删除
+	 * @return
+	 */
+	@ApiOperation(value = "账户批量删除", notes = "账户批量删除")
+	@ApiImplicitParams({
+		  @ApiImplicitParam(name="accountIds",value="账户ID集合数组，\"22,33,44,53,3\"",dataType="string", paramType = "query",required=true)
+		  })
+	@RequestMapping(value = "/deleteBatch", method = {RequestMethod.GET,RequestMethod.POST})
+	public @ResponseBody StateResultList<List<Account>> deleteBatchAccount(
+			@RequestParam("accountIds") String accountIds,
+			HttpSession session)  {
+		String[] ads = accountIds.replace(" ","").split(",");
+		boolean dm=false;
+		for (int i = 0; i < ads.length; i++) {
+			if(!NumberUtil.isNumeric(ads[i])){
+				throw new CommonRollbackException("参数错误");
+			}
+		}
+		for (int i = 0; i < ads.length; i++) {
+			dm = accountService.delAccount(new Integer(ads[i]));
+		}
+		if(dm){
+			List<Account> list = new ArrayList<Account>();
+			list.add(new Account());
 			return ResultUtil.getSlefSRSuccessList(list);
 		}
 		return ResultUtil.getSlefSRFailList(null);
